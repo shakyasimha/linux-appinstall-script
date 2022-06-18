@@ -27,7 +27,6 @@ cd Downloads
 # Install zsh
 sudo apt install zsh -y
 sudo chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 exec "$SHELL"
 
 # Install Brave
@@ -64,6 +63,15 @@ sudo apt install appimagelauncher
 
 # Flameshot
 sudo apt-get install flameshot -y
+
+# Check if snap is installed, if yes, remove snap and install flatpak
+if dpkg --list | grep snapd > /dev/null; then
+	sudo systemctl disable snapd.socket
+	sudo apt-get purge snapd
+	sudo add-apt-repository ppa:flatpak/stable -y
+	sudo apt update
+	sudo apt install flatpak
+fi
 
 # Remove all deb files
 rm -rf *.deb && cd 
