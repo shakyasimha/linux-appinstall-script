@@ -9,7 +9,9 @@ if [[ $yn =~ ^[Yy]$ ]]
 then 
 	if dpkg --list | grep snapd > /dev/null; then
 		sudo systemctl disable snapd.socket
+		sudo rm -rf /var/cache/snapd
 		sudo apt-get remove snapd
+		rm -rf ~/snap
 	else
 		echo "snap is not installed in your system"
 	fi
