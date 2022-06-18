@@ -2,6 +2,7 @@
 
 # For initial update and installing packages, after system reinstall
 # Packages that I need which I need to install every time:
+# vim
 # zsh
 # Brave browser
 # Discord
@@ -11,9 +12,14 @@
 # nodejs
 # AppImageLauncher
 # Flameshot
+# tldr
+# speedtest-cli
 
 # Update the system
 sudo apt-get update && sudo apt-get upgrade -y
+
+# install vim, tldr, speedtest-cli, tmux, ranger, ncdu, htop 
+sudo apt-get install vim tldr speedtest-cli tmux ranger ncdu htop -y 
 
 # cd to downloads, for debs
 cd Downloads
@@ -61,3 +67,4 @@ sudo apt-get install flameshot -y
 
 # Remove all deb files
 rm -rf *.deb && cd 
+
