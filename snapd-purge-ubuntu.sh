@@ -2,7 +2,8 @@
 
 # Script for removing snapd from your Ubuntu system
 
-read -p "Are you sure you want to remove snap from your system? (yes/no) " yn
+echo "Are you sure you want to remove snap from your system?"
+read -p "[Y/n] >> " yn
 echo
 
 if [[ $yn =~ ^[Yy]$ ]]
@@ -20,14 +21,15 @@ else
 fi
 
 echo
-read -p "Do you want to install flatpak in your system? (yes/no) " yn
+echo "Do you want to install flatpak in your system? "
+read -p "[Y/n] >> " yn
 echo
 
 if [[ $yn =~ ^[Yy]$ ]]
 then 
 	if dpkg --list | grep flatpak > /dev/null; then
 		echo "flatpak is already installed in your system."
-		echo "Press any key to exit"
+		# echo "Press any key to exit"
 	else
 		sudo apt-get install flatpak
 	fi
