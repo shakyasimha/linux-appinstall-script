@@ -14,7 +14,9 @@ then
 		sudo apt-get remove snapd
 		rm -rf ~/snap
 	else
+		echo
 		echo "snap is not installed in your system"
+		echo
 	fi
 else
 	exit
@@ -33,6 +35,11 @@ then
 	else
 		sudo apt-get install flatpak
 	fi
+else	
+	echo
+	echo "snap removed successfully."
+	echo
+	exit
 fi
 
 
