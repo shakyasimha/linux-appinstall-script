@@ -11,6 +11,7 @@ then
 	if dpkg --list | grep snapd > /dev/null; then
 		sudo systemctl disable snapd.socket
 		sudo rm -rf /var/cache/snapd
+		sudo rm -rf /var/lib/snapd
 		sudo apt-get remove snapd
 		rm -rf ~/snap
 	else
