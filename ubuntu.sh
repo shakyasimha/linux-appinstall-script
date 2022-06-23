@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y git build-essentials 
 
 # install vim, tldr, speedtest-cli, tmux, ranger, ncdu, htop 
-sudo apt-get install vim tldr speedtest-cli tmux ranger ncdu htop -y 
+sudo apt-get install vim tldr speedtest-cli tmux ranger ncdu htop net-tools -y 
 
 # Purge games
 sudo apt-get purge gnome-mahjongg gnome-sudoku gnome-mines aisleriot -y
