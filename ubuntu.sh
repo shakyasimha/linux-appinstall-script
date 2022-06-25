@@ -14,18 +14,29 @@
 # Flameshot
 # tldr
 # speedtest-cli
+# fonts-noto
+# ttf-mscore-fonts
+# powerline-fonts
 
 # Update the system
 sudo apt-get update && sudo apt-get upgrade -y
 
-# install build-essentials and git
-sudo apt-get install -y git build-essentials 
+# Remove unusued dependencies
+sudo apt-get autoremove -y
+ 
+# install build-essentials, git, net-tools
+sudo apt-get install -y git build-essentials net-tools -y
 
 # install vim, tldr, speedtest-cli, tmux, ranger, ncdu, htop 
-sudo apt-get install vim tldr speedtest-cli tmux ranger ncdu htop net-tools -y 
+sudo apt-get install vim tldr speedtest-cli tmux ranger ncdu htop -y 
 
-# Purge games
+# Purge games (full install)
 sudo apt-get purge gnome-mahjongg gnome-sudoku gnome-mines aisleriot -y
+
+# Enable multiverse repo and install ms-fonts
+sudo add-apt-repository multiverse
+sudo apt update -y
+sudo apt install fonts-noto fonts-powerline ttf-mscorefonts-installer -y
 
 # cd to downloads, for debs
 cd Downloads
@@ -65,10 +76,7 @@ sudo apt-get install -y nodejs
 
 # Appimagelauncher
 sudo add-apt-repository ppa:appimagelauncher-team/stable -y && sudo apt-get update -y
-sudo apt install appimagelauncher
-
-# Flameshot
-sudo apt-get install flameshot -y
+sudo apt install -y appimagelauncher
 
 # Check if snap is installed, if yes, remove snap and install flatpak
 #if dpkg --list | grep snapd > /dev/null; then
@@ -80,13 +88,8 @@ sudo apt-get install flameshot -y
 #fi
 
 # install flatpak
-sudo apt install flaptak gnome-software-plugin-flatpak -y
+sudo apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Remove all deb files
 rm -rf *.deb && cd 
-
-# Install zsh
-sudo apt install zsh -y
-sudo chsh -s $(which zsh)
-exec "$SHELL"
