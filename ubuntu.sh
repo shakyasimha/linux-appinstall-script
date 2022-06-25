@@ -91,5 +91,14 @@ sudo apt install -y appimagelauncher
 sudo apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# install pip
+sudo apt-get install python3-pip python-is-python3 -y
+
+# install dconf-editor and gnome-tweaks
+sudo apt-get install dconf-editor gnome-tweaks -y
+
+# install zsh
+sudo apt-get install -y zsh zsh-autosuggestion zsh-syntax-highlighting 
+
 # Remove all deb files
 rm -rf *.deb && cd 
