@@ -95,7 +95,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo apt-get install python3-pip python-is-python3 -y
 
 # install dconf-editor and gnome-tweaks
-sudo apt-get install dconf-editor gnome-tweaks -y
+sudo apt-get install dconf-editor gnome-tweaks chrome-gnome-shell-y
 
 # install zsh
 sudo apt-get install -y zsh zsh-autosuggestion zsh-syntax-highlighting 
