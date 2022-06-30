@@ -88,7 +88,7 @@ sudo apt install -y appimagelauncher
 #fi
 
 # install flatpak
-sudo apt install flatpak gnome-software-plugin-flatpak -y
+sudo apt install flatpak flatpak-xdg-utils gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # install pip

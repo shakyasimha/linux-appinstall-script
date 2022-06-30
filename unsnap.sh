@@ -12,8 +12,8 @@ then
 		sudo systemctl disable snapd.socket
 		sudo rm -rf /var/cache/snapd
 		sudo rm -rf /var/lib/snapd
-		sudo apt-get remove snapd
 		rm -rf ~/snap
+		sudo apt-get purge snapd
 	else
 		echo
 		echo "snap is not installed in your system"
