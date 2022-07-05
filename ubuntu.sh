@@ -36,22 +36,10 @@ sudo apt-get purge gnome-mahjongg gnome-sudoku gnome-mines aisleriot -y
 # Enable multiverse repo and install ms-fonts
 sudo add-apt-repository multiverse
 sudo apt update -y
-sudo apt install fonts-noto fonts-powerline ttf-mscorefonts-installer -y
+sudo apt install fonts-noto fonts-powerline fonts-cascadia-code ttf-mscorefonts-installer -y
 
 # cd to downloads, for debs
 cd Downloads
-
-# Install Brave
-sudo apt install apt-transport-https curl -y
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt-get update -y
-sudo apt install brave-browser -y
-
-# Install discord
-#cd Downloads
-#wget -nc "https://discord.com/api/download?platform=linux&format=deb"
-#sudo dpkg -i discord-*.deb -y || sudo apt-get install -f -y && sudo dpkg -i discord-*.deb
 
 # Install VS Code
 sudo apt-get install gpg -y
@@ -77,15 +65,6 @@ sudo apt-get install -y nodejs
 # Appimagelauncher
 sudo add-apt-repository ppa:appimagelauncher-team/stable -y && sudo apt-get update -y
 sudo apt install -y appimagelauncher
-
-# Check if snap is installed, if yes, remove snap and install flatpak
-#if dpkg --list | grep snapd > /dev/null; then
-#	sudo systemctl disable snapd.socket
-#	sudo apt-get purge snapd
-#	sudo add-apt-repository ppa:flatpak/stable -y
-#	sudo apt update
-#	sudo apt install flatpak
-#fi
 
 # install flatpak
 sudo apt install flatpak flatpak-xdg-utils gnome-software-plugin-flatpak -y
