@@ -67,7 +67,7 @@ sudo add-apt-repository ppa:appimagelauncher-team/stable -y && sudo apt-get upda
 sudo apt install -y appimagelauncher
 
 # install flatpak
-sudo apt install flatpak flatpak-xdg-utils gnome-software-plugin-flatpak -y
+sudo apt install flatpak flatpak-xdg-utils plasma-discover-backend-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # install pip
