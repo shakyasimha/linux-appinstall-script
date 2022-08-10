@@ -70,6 +70,11 @@ sudo apt install -y appimagelauncher
 sudo apt install flatpak flatpak-xdg-utils gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+#install nala
+echo "deb https://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+sudo apt -y update && sudo apt install -y nala
+
 # install pip
 sudo apt-get install python3-pip python-is-python3 -y
 
