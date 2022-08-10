@@ -33,6 +33,9 @@ sudo apt-get install vim tldr speedtest-cli tmux ranger ncdu htop -y
 # Purge games (full install)
 sudo apt-get purge kmahjongg ksudoku kmines ksudoku -y
 
+# Install yakuake
+sudo apt-get install -y yakuake
+
 # Enable multiverse repo and install ms-fonts
 sudo add-apt-repository multiverse
 sudo apt update -y
